@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdbool.h>
+
 
 int main(){
   // this is a comment
@@ -49,7 +51,8 @@ int main(){
   printf("Your favorite symbol is %c\n", symbol);
   printf("USA uses %c as its currency\n", currency);
 
-  // in C we dont have strins so we use :-
+  // in C we dont have strins so we use char variable_name[] = "somthing"; as a string 
+  // place holder value of strings are %s 
 
   char name[] = "Calm";
   char food[] = "Momos";
@@ -58,6 +61,8 @@ int main(){
   printf("Hello %s\n", name);
   printf("I like to eat %s\n", food);
   printf("Your email is %s\n", email);
+
+
   return 0;
 }
 
