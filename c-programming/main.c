@@ -53,9 +53,11 @@ int main(){
 
   char name[] = "Calm";
   char food[] = "Momos";
+  char email[] = "example@email.com";
 
   printf("Hello %s\n", name);
   printf("I like to eat %s\n", food);
+  printf("Your email is %s\n", email);
   return 0;
 }
 
