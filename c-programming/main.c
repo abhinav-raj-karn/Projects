@@ -62,8 +62,43 @@ int main(){
   printf("I like to eat %s\n", food);
   printf("Your email is %s\n", email);
 
+  // bools or boolian are yes or no-- true or false -- 0 or 1 statements 
 
+  bool isOnline = false;
+  bool isStudent = true;
+  bool forSale = false;
+  if(isOnline){
+    printf("You are online");
+  }
+  else{
+    printf("You are offline");
+  }printf("\n");
+  
+  if (isStudent){
+    printf("you are a student\n");
+  }
+  else{
+    printf("you are not a student\n");
+  }
+  if (forSale){
+    printf("X is for sale\n");
+  }
+  else{
+    printf("x is not for sale\n");
+  }
+  //printf("%d", isOnline);
   return 0;
+
+  //              SUMMERY 
+  //  variable = A reusable container for value.
+  //              Behaves as if it were the value it contains.
+  //  int = whole numbers (4 bytes in mordern systems)
+  //  float =single-percision decimal number (8bytes)
+  //  char = single character (1 byte)
+  //  char[] =array of characters (size varies)
+  //  bool = true or false (1 byte, requires <stdbool.h>)
+
+
 }
 
 
