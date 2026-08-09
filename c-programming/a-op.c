@@ -20,9 +20,15 @@ int main() {
 
   /* augmented assignment operator */
 
-  x = x + 2;
-
-
+  //x = x + 2;
+ 
+ // we can also write it as...
+  
+  //x+= 2;
+  //x -= 3;
+  //x*= 2;
+  //x/= 2;
+ 
 
   printf("%d\n", x);
 
