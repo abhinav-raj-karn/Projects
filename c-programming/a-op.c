@@ -4,15 +4,27 @@ int main() {
  
   // arithmetic operators = + - * / % ++ --
 
-  int x = 2;
-  float y = 3;
-  float z = 0;
+  int x = 10;
+  int y = 2;
+  int z = 0;
 
   // z = x + y;
   // z = x - y;
   // z = x * y;
-  z = x / y;
-  printf("%f\n", z);
+  // z = x / y;
+  //z = x % y;
+  //x++;
+  //x--;
+  
+
+
+  /* augmented assignment operator */
+
+  x = x + 2;
+
+
+
+  printf("%d\n", x);
 
   return 0;
 
