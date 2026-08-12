@@ -32,8 +32,16 @@ int main()
 
 
    case '/' :
-    result = num1 / num2;
+    if (num2 == 0){
+      printf("You can't divide by zero dumbo!\n");
+      }
+    else{
+      result = num1 / num2;
+      }
     break;
+
+   default:
+    printf("Invalid operator\n");
 
   }
   printf("Result: %.4lf", result);
