@@ -9,7 +9,8 @@
 
 int main() {
 
-/*
+// WITH INT
+
 
   int number = 0;
 
@@ -18,7 +19,9 @@ int main() {
     scanf("%d", &number);
   }while(number <= 0);
 
-*/
+
+// WITH STRING
+
 
   char name[50] = "";
 
@@ -32,7 +35,26 @@ int main() {
     fgets(name, sizeof(name), stdin);
     name[strlen(name) - 1] = '\0';
   }
-  printf("Hello, %s", name);
+  printf("Hello, %s\n", name);
+
+
+// WITH BOOLEIN
+
+  bool isRunning = true;
+  char responce = '\0';
+
+  while(isRunning){
+
+    printf("You are playing a game\n");
+    printf("Would you like to continue? (Y = yes, N = no): ");
+    scanf(" %c", &responce);
+
+    if(responce != 'Y' && responce != 'y'){
+      isRunning = false;
+    }
+  }
+  printf("You exit the game\n");
+
 
 
   return 0;
