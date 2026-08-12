@@ -24,7 +24,6 @@ int main() {
 
   return 0;
 }
-*/
 
 bool ageCheck(int age){
   
@@ -34,7 +33,6 @@ bool ageCheck(int age){
   else {
     return false;
   }
-
 }
 
 int main(){
@@ -50,3 +48,74 @@ int main(){
 
   return 0;
 }
+
+*/
+
+int getMax(int x, int y){
+  
+  if (x >= y){
+    return x;
+  }
+  else {
+    return y;
+  }
+}
+
+int main(){
+
+  int max = getMax(2, 3);
+
+  printf("%d", max);
+
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
