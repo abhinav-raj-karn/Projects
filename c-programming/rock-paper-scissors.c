@@ -37,7 +37,7 @@ int main() {
       printf("you chose SCISSORS\n");
       break;
   }
-
+  checkWinner(int userChoice, int computerChoice)
 
 
   return 0;
@@ -45,7 +45,6 @@ int main() {
 
 
 int getComputerChoice(){
-
   return (rand() % 3) + 1;
 }
 
@@ -67,7 +66,27 @@ int getUserChoice(){
 
 
 void checkWinner(int userChoice, int computerChoice){
- return;
+ 
+  if(userChoice == computerChoice){
+      printf("It's a TIE!!\n");
+  }
+  else if(userChoice == 1 && computerChoice == 3){
+
+    printf("You WIN!\n");
+  }
+  else if(userChoice == 2 && computerChoice == 1){
+
+    printf("You WIN!\n");
+  }
+  else if(userChoice == 3 && computerChoice == 2){
+
+    printf("You WIN!\n");
+  }
+
+
+   
+
+  return;
 }
 
 
