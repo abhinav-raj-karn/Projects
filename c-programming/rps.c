@@ -15,6 +15,17 @@ int main() {
   int userChoice = getUserChoice();
   int computerChoice = getComputerChoice();
 
+ switch(userChoice){
+    case 1:
+      printf("you chose ROCK\n");
+      break;
+    case 2:
+      printf("you chose PAPER\n");
+      break;
+    case 3:
+      printf("you chose SCISSORS\n");
+      break;
+  }
   switch(computerChoice){
     case 1:
       printf("computer chose ROCK\n");
@@ -26,18 +37,8 @@ int main() {
       printf("computer chose SCISSORS\n");
       break;
   }
-  switch(userChoice){
-    case 1:
-      printf("you chose ROCK\n");
-      break;
-    case 2:
-      printf("you chose PAPER\n");
-      break;
-    case 3:
-      printf("you chose SCISSORS\n");
-      break;
-  }
-  checkWinner(int userChoice, int computerChoice);
+ 
+  checkWinner(userChoice, computerChoice);
 
 
   return 0;
@@ -89,5 +90,4 @@ void checkWinner(int userChoice, int computerChoice){
 
   return;
 }
-
 
