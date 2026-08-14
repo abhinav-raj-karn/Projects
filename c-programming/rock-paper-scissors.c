@@ -37,7 +37,7 @@ int main() {
       printf("you chose SCISSORS\n");
       break;
   }
-  checkWinner(int userChoice, int computerChoice)
+  checkWinner(int userChoice, int computerChoice);
 
 
   return 0;
@@ -82,9 +82,10 @@ void checkWinner(int userChoice, int computerChoice){
 
     printf("You WIN!\n");
   }
+  else if(userChoice == 1 && computerChoice == 2){
 
-
-   
+    printf("Computer won!\n");
+  }
 
   return;
 }
