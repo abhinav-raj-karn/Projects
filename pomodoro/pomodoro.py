@@ -5,9 +5,9 @@ import curses
 import time
 import subprocess
 
-WORK_MINUTES = 1
-SHORT_BREAK = 1
-LONG_BREAK = 2
+WORK_MINUTES = 60
+SHORT_BREAK = 10
+LONG_BREAK = 20
 
 STATS_FILE = Path.home() / ".pomodoro_stats.json"
 
