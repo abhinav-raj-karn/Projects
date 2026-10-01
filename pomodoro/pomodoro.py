@@ -1,4 +1,6 @@
-
+import json
+from datetime import date
+from pathlib import Path
 import curses
 import time
 import subprocess
@@ -6,6 +8,38 @@ import subprocess
 WORK_MINUTES = 1
 SHORT_BREAK = 1
 LONG_BREAK = 2
+
+STATS_FILE = Path.home() / ".pomodoro_stats.json"
+
+
+def load_stats():
+    if STATS_FILE.exists():
+        with open(STATS_FILE, "r") as f:
+            return json.load(f)
+
+    return {}
+
+
+def save_stats(stats):
+    with open(STATS_FILE, "w") as f:
+        json.dump(stats, f, indent=4)
+
+
+def record_focus_session(minutes):
+    stats = load_stats()
+
+    today = str(date.today())
+
+    if today not in stats:
+        stats[today] = {
+            "sessions": 0,
+            "focus_minutes": 0
+        }
+
+    stats[today]["sessions"] += 1
+    stats[today]["focus_minutes"] += minutes
+
+    save_stats(stats)
 
 def notify(title, message):
     subprocess.Popen([
@@ -24,7 +58,7 @@ def main(stdscr):
 
     while True:
         if mode == "FOCUS":
-            duration = WORK_MINUTES * 60
+            duration = WORK_MINUTES * 10
         elif session % 4 == 0:
             duration = LONG_BREAK * 60
         else:
@@ -63,6 +97,7 @@ def main(stdscr):
 
         if mode == "FOCUS":
             session += 1
+            record_focus_session(WORK_MINUTES)
 
             if session % 4 == 0:
                 notify("🍅 Pomodoro", "Focus complete! Time for a long break.")
