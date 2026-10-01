@@ -1,10 +1,18 @@
 
 import curses
 import time
+import subprocess
 
 WORK_MINUTES = 1
 SHORT_BREAK = 1
 LONG_BREAK = 2
+
+def notify(title, message):
+    subprocess.Popen([
+        "notify-send",
+        title,
+        message
+    ])
 
 def main(stdscr):
     curses.curs_set(0)
@@ -13,7 +21,6 @@ def main(stdscr):
 
     session = 0
     mode = "FOCUS"
-    paused = False
 
     while True:
         if mode == "FOCUS":
@@ -56,8 +63,15 @@ def main(stdscr):
 
         if mode == "FOCUS":
             session += 1
+
+            if session % 4 == 0:
+                notify("🍅 Pomodoro", "Focus complete! Time for a long break.")
+            else:
+                notify("🍅 Pomodoro", "Focus complete! Time for a short break.")
+
             mode = "BREAK"
         else:
+            notify("🍅 Pomodoro", "Break is over. Ready to focus?")
             mode = "FOCUS"
 
 curses.wrapper(main)
