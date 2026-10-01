@@ -48,6 +48,36 @@ def notify(title, message):
         message
     ])
 
+def show_stats(stdscr):
+    stats = load_stats()
+    today = str(date.today())
+
+    today_stats = stats.get(today, {
+        "sessions": 0,
+        "focus_minutes": 0
+    })
+
+    sessions = today_stats["sessions"]
+    focus_minutes = today_stats["focus_minutes"]
+
+    hours = focus_minutes // 60
+    minutes = focus_minutes % 60
+
+    stdscr.clear()
+
+    stdscr.addstr(2, 4, "📊 TODAY'S STATISTICS", curses.A_BOLD)
+    stdscr.addstr(5, 4, f"Completed sessions: {sessions}")
+    stdscr.addstr(6, 4, f"Focus time: {hours}h {minutes}m")
+    stdscr.addstr(8, 4, "Press ESC to return")
+
+    stdscr.refresh()
+
+    while True:
+        key = stdscr.getch()
+
+        if key == 27:
+            break
+
 def main(stdscr):
     curses.curs_set(0)
     stdscr.nodelay(True)
@@ -58,7 +88,7 @@ def main(stdscr):
 
     while True:
         if mode == "FOCUS":
-            duration = WORK_MINUTES * 10
+            duration = WORK_MINUTES * 60
         elif session % 4 == 0:
             duration = LONG_BREAK * 60
         else:
