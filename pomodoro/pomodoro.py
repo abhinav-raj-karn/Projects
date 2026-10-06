@@ -6,8 +6,8 @@ import time
 import subprocess
 
 WORK_MINUTES = 60
-SHORT_BREAK = 10
-LONG_BREAK = 20
+SHORT_BREAK = 5
+LONG_BREAK = 15
 
 STATS_FILE = Path.home() / ".pomodoro_stats.json"
 
