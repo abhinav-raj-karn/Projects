@@ -1,4 +1,3 @@
-// gets -- NEVER USE THIS FUNCTION!!!!!!!!!!!!!!!!!
 
 
 #include <stdio.h>
