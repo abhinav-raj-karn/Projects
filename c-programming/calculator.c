@@ -44,7 +44,7 @@ int main()
     printf("Invalid operator\n");
 
   }
-  printf("Result: %.4lf", result);
+  printf("Result: %.2lf", result);
 
 
   return 0;
